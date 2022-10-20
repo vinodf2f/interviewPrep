@@ -1,0 +1,16 @@
+- [ ] Dom vs virtual Dom
+- [ ] Reconcillation 
+- [ ] Design patteren
+- [ ] OOP
+- [ ] lifeCycle method
+- [ ] Common APIs 
+    - [ ] UseRef vs createRef
+    - [ ] Create context
+    - 
+- [ ] Lazy Loading/ Dynamic import
+- [ ] Ways to detech memory leak/ performance 
+
+
+- [ ] Redux Saga vs thunk, Why we need it
+
+- [ ] Props Drilling

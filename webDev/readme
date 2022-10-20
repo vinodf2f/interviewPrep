@@ -1,0 +1,34 @@
+- [ ] Dom painting
+- [ ] resource loading / Network optimisation
+- [ ] asset optimisation
+- [ ] evnt loop
+- [ ] assesibility
+- [ ] security
+- [ ] ssr
+- [ ] Perfonmance Optimisation techniques
+
+- [ ] module bundling tools- Webpack/ babel
+
+
+------------
+
+
+- [ ] js
+- [ ] HTML
+- [ ] CSS
+- [ ] React
+
+
+
+
+
+
+
+----------------
+Performance optimization technique
+
+- Reusable code structure 
+-  Write less code as much as possible 
+-  Sprites, compressed images, smaller images -  Incorporate JavaScript at the bottom of the page 
+-  Minify CSS, JavaScript, HTML 
+-  Caching static contents and images 

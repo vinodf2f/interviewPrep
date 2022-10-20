@@ -1,0 +1,23 @@
+/* A CSS pseudo-element is a keyword added to a selector that lets you style a specific part of the selected element(s).
+ For example, ::first-line can be used to change the font of the first line of a paragraph. 
+ */
+
+/* The first line of every <p> element. */
+p::first-line {
+  color: blue;
+  text-transform: uppercase;
+}
+
+
+/* 
+Add somthing before or after element using  ::before and ::after
+TIP: font awesome library can be used to add icons bafore and ater an element
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+
+*/
+
+.test2:before {
+  content: "\f005";
+  color: #d56e0c;
+}

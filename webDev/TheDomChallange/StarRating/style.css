@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#star {
+    
+  /* border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 50px solid red;
+  border-top: 50px solid transparent; */
+}
+
+
+#star::after{
+    
+    /* content: "\f005"; */
+}
+/* 
+#star::before{
+    content: "\f006";
+} */

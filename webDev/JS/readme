@@ -1,0 +1,20 @@
+- [ ] promises
+- [ ] This
+- [ ] apply bind, call
+- [ ] _ _proto_ _ vs Prototypal inheritance
+- [ ] Closure
+- [ ] Currying
+
+- [ ] Event bubbling  & capturing
+
+- [ ] pub sub
+
+
+
+
+-------------
+
+Problems
+ - [ ] Polling an API function
+ - [ ] debouncing/throttle pollyFill
+ - [ ] Promise pollyfill
