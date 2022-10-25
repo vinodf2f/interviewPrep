@@ -1,57 +1,89 @@
+
+<!-- 
+  1. add fontAwsome resource in head
+  2. create Star using js function
+  3. add event listener - onhover, onClick
+
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
-
-    <script>
-        const getStar = (count) => {
-   
-          const fragment = document.createDocumentFragment("div");
-  
-          for (let index = 0; index < count; index++) {
-            const newElement = document.createElement("div");
-            newElement.classList.add("fullStar");
-            newElement.dataset.ratingVal = index;
-            fragment.appendChild(newElement);
-          }
-  
-     
-          return fragment
-        };
-
-  
-    try {
-        document.querySelector('.display-star-value').innerHTML = getStar(5);
-        
-    } catch (error) {
-        
-    }
-  
-      </script>
     <title>Document</title>
-
     <style>
-      .fullStar::before {
+      .star::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
         content: "\f006";
-        color: #5f6368;
+        color: gray;
+      }
+      .starFilled::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f006";
+        color: rgb(213, 155, 21);
       }
 
-      .star{
-        font-size: 40;
+      container {
+        display: flex;
+        flex-direction: row;
       }
     </style>
   </head>
   <body>
-    <div class="star"></div>
-    <div id="display-star-value"></div>
-
-
+    <container> </container>
   </body>
+  <script>
+    (() => {
+      const $container = document.querySelector("container");
+
+      const getStar = (count) => {
+        let currentValue = 0;
+        const $newElement = document.createDocumentFragment();
+        for (let index = 0; index < count; index++) {
+          const $startDiv = document.createElement("div");
+          $startDiv.classList.add("star");
+          $startDiv.addEventListener("click", (e) => {
+            currentValue = index
+            paint(index);
+          });
+          $startDiv.addEventListener("mouseenter", (e) => {
+            paint(index);
+          });
+          $startDiv.addEventListener("mouseout", (e) => {
+            paint(currentValue);
+          });
+          $newElement.appendChild($startDiv);
+        }
+        $container.appendChild($newElement);
+        paint(currentValue);
+      };
+
+      const paint = (currentValue) => {
+        const $stars = document.querySelectorAll(".star");
+
+        for (let index = 0; index < $stars.length; index++) {
+          console.log({ $stars });
+          const $starDiv = $stars[index];
+
+          if (currentValue >= index) {
+            $starDiv.classList.add("starFilled");
+          } else {
+            $starDiv.classList.remove("starFilled");
+          }
+        }
+      };
+
+      getStar(5);
+    })();
+  </script>
 </html>
+
+
