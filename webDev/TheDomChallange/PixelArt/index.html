@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #container {
+        display: grid;
+      }
+      .box {
+        width: 60px;
+        height: 60px;
+        border: 0.1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      const getRandomColor = () => {
+        const possibleValues = "0123456789ABCDEF";
+        let color = "#";
+        for (let index = 0; index < 6; index++) {
+          const randomIndex = Math.floor(Math.random() * 16);
+          color += possibleValues[randomIndex];
+        }
+
+        console.log(color);
+        return color;
+      };
+
+      const paintGrids = (rows, columns) => {
+        const $container = document.querySelector("#container");
+        $container.style.gridTemplateColumns = `repeat(${columns},1fr)`;
+        $container.style.gridTemplateRows = `repeat(${rows},1fr)`;
+        let currentSelectedElement;
+
+        const $newFragment = document.createDocumentFragment();
+
+        for (let index = 0; index < rows * columns; index++) {
+          const $box = document.createElement("div");
+          $box.classList.add("box");
+          $box.draggable = true;
+
+          if (index >= rows * columns - columns) {
+            const randomColor = getRandomColor();
+            $box.style.backgroundColor = randomColor;
+            $box.dataset.color = randomColor;
+          }
+
+          $box.addEventListener("dragover", (e) => {
+            if (currentSelectedElement) {
+              $box.style.backgroundColor = currentSelectedElement.dataset.color;
+            }
+          });
+
+          $box.addEventListener("click", (e) => {
+            if (index >= rows * columns - columns) {
+              if (currentSelectedElement) currentSelectedElement.innerHTML = "";
+              currentSelectedElement = e.target;
+              currentSelectedElement.innerHTML = "#";
+            } else {
+              $box.style.backgroundColor = currentSelectedElement
+                ? currentSelectedElement.dataset.color
+                : "black";
+            }
+          });
+
+          $newFragment.appendChild($box);
+        }
+        $container.appendChild($newFragment);
+      };
+      paintGrids(10, 11);
+    </script>
+  </body>
+</html>
