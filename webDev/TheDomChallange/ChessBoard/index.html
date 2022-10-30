@@ -1,0 +1,111 @@
+
+<!-- This can be implemented in optimised way using 2d array (Nested for loop) -->
+
+<!DOCTYPE >
+
+<html>
+  <head>
+    <style>
+      #container {
+        border: 1px solid black;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      const painChessBoxes = (positionArray) => {
+        const $container = document.querySelector("#container");
+        const $newFragment = document.createDocumentFragment();
+        $container.innerHTML = "";
+
+        for (let index = 0; index < 64; index++) {
+          const rowIndex = Math.floor(index / 8);
+
+          const $chessBox = document.createElement("div");
+          $chessBox.classList.add("chessBox");
+          $chessBox.style.width = $container.offsetWidth / 8 - 1.6;
+          $chessBox.style.height = $container.offsetWidth / 8 - 1.6;
+          $chessBox.dataset.position = index + 1;
+          $chessBox.style.border = "0.2px solid black";
+          if (positionArray.includes(index + 1)) {
+            $chessBox.style.backgroundColor = "red";
+          } else if (rowIndex % 2 === 0) {
+            if (index % 2 === 0) {
+              $chessBox.style.backgroundColor = "white";
+            } else {
+              $chessBox.style.backgroundColor = "black";
+            }
+          } else {
+            if (index % 2 === 0) {
+              $chessBox.style.backgroundColor = "black";
+            } else {
+              $chessBox.style.backgroundColor = "white";
+            }
+          }
+
+          $newFragment.appendChild($chessBox);
+          $chessBox.textContent = index + 1;
+        }
+
+        $container.appendChild($newFragment);
+      };
+
+      const paintCheckBoard = () => {
+        let positionArray = [];
+        const $container = document.querySelector("#container");
+
+        $container.addEventListener("click", (event) => {
+          const positon = event.target.dataset.position;
+          positionArray.push(Number(positon));
+          let currentUpperRight = Number(positon);
+          let currentUpperLeft = Number(positon);
+          let currentLowerRight = Number(positon);
+          let currentLowerLeft = Number(positon);
+
+          while (currentUpperRight >= 0) {
+            positionArray.push(currentUpperRight);
+
+            if (currentUpperRight % 8 === 0) {
+              break;
+            } else {
+              currentUpperRight -= 7;
+            }
+          }
+          while (currentUpperLeft >=0) {
+            positionArray.push(currentUpperLeft);
+            if ((currentUpperLeft - 1) % 8 === 0) {
+              break;
+            } else {
+              currentUpperLeft -= 9;
+            }
+          }
+          while (currentLowerRight <= 64) {
+            positionArray.push(currentLowerRight);
+
+            if (currentLowerRight % 8 === 0) {
+              break;
+            } else {
+              currentLowerRight += 9;
+            }
+          }
+          while (currentLowerLeft <= 64) {
+            positionArray.push(currentLowerLeft);
+            if ((currentLowerLeft - 1) % 8 === 0) {
+              break;
+            } else {
+              currentLowerLeft += 7;
+            }
+          }
+
+          painChessBoxes(positionArray);
+        });
+        painChessBoxes(positionArray);
+      };
+
+      paintCheckBoard();
+    </script>
+  </body>
+</html>
