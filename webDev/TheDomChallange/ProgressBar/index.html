@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #progressBar{
+                width: 10px;
+                height: 20px;
+                border-width: 1px solid black;
+                background-color: aqua;
+                transition: width 2s, height 2s, background-color 2s, transform 2s;
+            }
+            #progressBar:hover{
+                width: 100px;
+                height: 20px;
+                border-width: 1px solid black;
+                background-color: aqua;
+                transition: width 2s, height 2s, background-color 2s, transform 2s;
+            }
+            
+
+        </style>
+    </head>
+
+    <body>
+        <h2>Progress Bar</h2>
+        <div id="progressBar"></div>
+        <script>
+            (()=>{
+                setTimeout(()=>{},2000)
+            })
+            
+        </script>
+    </body>
+</html>
