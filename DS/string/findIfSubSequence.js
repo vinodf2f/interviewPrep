@@ -17,6 +17,7 @@ const findIfSubSequence = (mainStr, str) => {
   console.log(isSubSequence, "isSubSequence");
 };
 
+//best
 const findIfSubSequence2 = (mainStr, str) => {
   let mainStrIndex = 0;
   let strIndex = 0;

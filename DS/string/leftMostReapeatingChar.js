@@ -15,7 +15,7 @@ const getLeftMostReapeatingChar = (str) => {
       break;
     }
   }
-  console.log(result);
+  console.log(str[result]);
 };
 
 getLeftMostReapeatingChar("yeeksforgeeks");

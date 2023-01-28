@@ -1,0 +1,113 @@
+.app__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  flex: 1;
+  height: 100px;
+  border: 1px solid black;
+  display: flex;
+}
+
+.filter__by {
+  margin: 10px;
+  padding: 10px;
+}
+.filter__chip{
+  margin: 10px;
+  padding: 10px;
+}
+
+.filter__chip__selected {
+background-color: rgb(237, 231, 231);
+border: 1px solid gray;
+border-radius: 10px;
+}
+
+.section__container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.left__section {
+  /* height: 200px; */
+  flex: 0.3;
+  border: 1px solid black;
+  height: 100vh;
+}
+
+.right__section {
+  flex: 1;
+  /* height: 200px; */
+  border: 1px solid black;
+  display: none;
+}
+
+.right__section__display {
+  flex: 1;
+  /* height: 200px; */
+  border: 1px solid black;
+  display: block;
+}
+
+.email__card{
+    display: flex;
+    flex-direction: row;
+
+    border: 1px solid red;
+
+}
+
+.email__card .avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    margin-right: 20px;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.email__card .content {
+    flex: 0.7;
+    border:0.1px solid black;
+    justify-content: center;
+    
+}
+
+.email__card .content__header {
+  width:100%
+
+}
+
+.add__to__fav {
+  /* width: 100px; */
+  background-color: pink;
+  height: 50px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items:center ;
+  margin: 10px;
+  cursor: pointer;
+
+}
+
+.add__to__fav:active {
+
+  background-color: blueviolet;
+
+}
+
+
+
+
+
+.fav__tag {
+  background-color: pink;
+  padding: 10px;
+}

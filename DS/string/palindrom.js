@@ -29,4 +29,4 @@ const isPal = (str) => {
 };
 
 const s = isPal("abccba");
-console.log(s);
+console.log(true + 4);

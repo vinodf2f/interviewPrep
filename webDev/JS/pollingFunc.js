@@ -6,7 +6,7 @@
 
 // And return a promise
 
-const poll = (func, validatorCallback, maxAttempts) => {
+const poll = (func, validatorCallback, maxAttempts, interval) => {
   let attempts = 0;
 
   const executeCall = async (resolve, reject) => {

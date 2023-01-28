@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      #container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script>
+      (() => {
+        const container = document.getElementById("container");
+        const boxContainer = document.createDocumentFragment();
+
+        for (let index = 0; index < 64; index++) {
+          const rowIndex = Math.floor(index / 8);
+          const box = document.createElement("div");
+          box.style.height = `${container.offsetWidth / 8 - 80}px`;
+          box.style.width = `${container.offsetWidth / 8 - 1}px`;
+          box.style.border = "0.2px solid red";
+
+          if (rowIndex % 2) {
+            if (index % 2) {
+              box.style.backgroundColor = "white";
+            } else {
+              box.style.backgroundColor = "black";
+            }
+          } else {
+            if (index % 2) {
+              box.style.backgroundColor = "black";
+            } else {
+              box.style.backgroundColor = "white";
+            }
+          }
+
+          boxContainer.appendChild(box);
+        }
+
+        container.appendChild(boxContainer);
+      })();
+    </script>
+  </body>
+</html>

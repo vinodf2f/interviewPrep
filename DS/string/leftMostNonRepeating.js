@@ -1,4 +1,4 @@
-const getLeftMostReapeatingChar = (str) => {
+const getLeftMostNonReapeatingChar = (str) => {
   const arr = Array(128).fill(0);
 
   [...str].forEach((element, index) => {
@@ -16,6 +16,7 @@ const getLeftMostReapeatingChar = (str) => {
       break;
     }
   }
+  return str[result];
 };
 
-getLeftMostReapeatingChar("eeksforgeeks");
+console.log(getLeftMostNonReapeatingChar("eeksforgeeks"));
