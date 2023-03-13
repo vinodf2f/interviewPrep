@@ -2,13 +2,20 @@ import { useState } from "react";
 import FileExplorer from "./pages/FileExplorer";
 import TicTacToe from "./pages/TicTacToe";
 import { data } from "./data/intialFolder";
+import './App.css'
+import TypeAhead from "./pages/TypeAhead";
+import Form from "./pages/Form";
+import OTPAutpfocus from "./pages/OTPAutofocus";
+import FilterTodos from './pages/FilterTodos'
 function App() {
-  // const [filesData, setfilesData] = useState(data);
-
   return (
     <div >
-       {/* <FileExplorer filesData={filesData} /> */}
-       <TicTacToe />
+       {/* <FileExplorer  /> */}
+       {/* <TicTacToe /> */}
+       {/* <TypeAhead /> */}
+       {/* <Form /> */}
+       {/* <OTPAutpfocus /> */}
+       <FilterTodos />
     </div>
   );
 }
