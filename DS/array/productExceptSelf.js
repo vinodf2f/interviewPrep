@@ -22,5 +22,25 @@ var productExceptSelf = function (nums) {
   }
 };
 
-const res = productExceptSelf([0, 2, 3, 4]);
-console.log({ res });
+// const res = productExceptSelf([0, 2, 3, 4]);
+
+// console.log({ res });
+
+const productExceptSelfNew = (numbers) => {
+  const result = Array(numbers.length);
+  let prefix = 1;
+
+  for (let index = 0; index < numbers.length; index++) {
+    result[index] = prefix;
+    prefix = prefix * numbers[index];
+  }
+  console.log({ result });
+  let postfix = 1;
+  for (let index = numbers.length - 1; index >= 0; index--) {
+    result[index] = result[index] * postfix;
+    postfix = postfix * numbers[index];
+  }
+  console.log({ result });
+};
+
+const result = productExceptSelfNew([1, 2, 0, 4]);

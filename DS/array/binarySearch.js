@@ -6,14 +6,6 @@ const binarySearch = (arr, value) => {
     const middleIndex = Math.floor(leftIndex + rightIndex / 2) - 1;
     const middleValue = arr[middleIndex];
 
-    console.log({
-      leftIndex,
-      middleIndex,
-      rightIndex,
-      middleValue,
-      value,
-    });
-
     if (value === middleValue) {
       return value;
     } else if (middleValue < value) {
@@ -28,3 +20,6 @@ const binarySearch = (arr, value) => {
 
 const val = binarySearch([1, 2, 3, 4, 5, 6], 10);
 console.log(val, "<>");
+
+// O(log n)
+// algorithm for finding an item from a sorted list of items
